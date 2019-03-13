@@ -1,10 +1,6 @@
 package pinyingo
 
 import (
-	"encoding/json"
-	"log"
-	"os"
-	"path"
 	"regexp"
 	"strings"
 
@@ -19,11 +15,11 @@ var (
 	USE_SEGMENT        = true
 	NO_SEGMENT         = false
 	use_hmm            = true
-	DICT_DIR           = path.Join(os.Getenv("GOPATH"), "src/github.com/struCoder/Go-pinyin/dict")
-	DICT_PHRASES       = path.Join(DICT_DIR, "phrases-dict")
+	//DICT_DIR           = ""//path.Join(strings.Split(os.Getenv("GOPATH"), ":")[0], "src/github.com/cleopard/Go-pinyin/dict")
+	//DICT_PHRASES       = path.Join(DICT_DIR, "phrases-dict")
 )
 
-var phrasesDict map[string]string
+// var phrasesDict map[string]string
 var reg *regexp.Regexp
 var INITIALS []string = strings.Split("b,p,m,f,d,t,n,l,g,k,h,j,q,x,r,zh,ch,sh,z,c,s", ",")
 var keyString string
@@ -66,7 +62,7 @@ func init() {
 	jieba = gojieba.NewJieba()
 
 	//初始化多音字到内存
-	initPhrases()
+	// initPhrases()
 }
 
 func getMapKeys() string {
@@ -94,14 +90,14 @@ func firstLetter(str string) string {
 	return firstLetter
 }
 
-func initPhrases() {
-	f, err := os.Open(DICT_PHRASES)
-	defer f.Close()
-	if err != nil {
-		log.Fatal(err)
-	}
-	decoder := json.NewDecoder(f)
-	if err := decoder.Decode(&phrasesDict); err != nil {
-		log.Fatal(err)
-	}
-}
+//func initPhrases() {
+//	f, err := os.Open(DICT_PHRASES)
+//	defer f.Close()
+//	if err != nil {
+//		log.Fatal(err)
+//	}
+//	decoder := json.NewDecoder(f)
+//	if err := decoder.Decode(&phrasesDict); err != nil {
+//		log.Fatal(err)
+//	}
+//}

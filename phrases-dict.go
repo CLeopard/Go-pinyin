@@ -1,4 +1,6 @@
-{
+package pinyingo
+
+var phrasesDict  = map[string]string{
   "阿Ｑ":   "ā,Ｑ",
   "阿爸":   "ā,bà",
   "阿鼻":   "ā,bí",
@@ -41117,5 +41119,5 @@
   "做好做恶":   "zuò,hǎo,zuò,è",
   "做一日和尚撞一日钟":   "zuò,yī,rì,hé,shàng,zhuàng,yī,rì,zhōng",
   "做一日和尚撞一天钟":   "zuò,yī,rì,hé,shàng,zhuàng,yī,tiān,zhōng",
-  "做一天和尚撞一天钟":   "zuò,yī,tiān,hé,shàng,zhuàng,yī,tiān,zhōng"
+  "做一天和尚撞一天钟":   "zuò,yī,tiān,hé,shàng,zhuàng,yī,tiān,zhōng",
 }
